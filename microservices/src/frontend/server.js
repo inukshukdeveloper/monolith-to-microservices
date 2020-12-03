@@ -43,7 +43,7 @@ exec("ls -la", (error, stdout, stderr) => {
 // swift run
 
 const { execFile } = require('child_process');
-const child = execFile('run-swift-models', ['--version'], (error, stdout, stderr) => {
+const child = execFile('run-swift-models', (error, stdout, stderr) => {
   if (error) {
     throw error;
   }
