@@ -50,7 +50,7 @@ exec("ls -la", (error, stdout, stderr) => {
 //   console.log(stdout);
 // });
 
-const { exec } = require('child_process');
+// const { exec } = require('child_process');
 var yourscript = exec('sh run-s4tf-script.sh',
         (error, stdout, stderr) => {
             console.log(stdout);
