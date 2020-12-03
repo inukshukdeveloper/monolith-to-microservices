@@ -33,6 +33,15 @@ exec("ls -la", (error, stdout, stderr) => {
     console.log(`stdout: ${stdout}`);
 });
 
+// here is the code to start running S4TF models
+// change the clone to the pix2pix branch off
+// the forked swift-models repository to try
+// the pix2pix model
+//
+// git clone https://github.com/tensorflow/swift-models.git
+// cd swift-models
+// swift run
+
 //Serve website
 app.use(express.static(path.join(__dirname, "public")));
 
