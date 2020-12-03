@@ -51,7 +51,7 @@ exec("ls -la", (error, stdout, stderr) => {
 // });
 
 // const { exec } = require('child_process');
-var yourscript = exec('sh run-s4tf-script.sh',
+var yourscript = exec('sh ./src/frontend/run-s4tf-script.sh',
         (error, stdout, stderr) => {
             console.log(stdout);
             console.log(stderr);
