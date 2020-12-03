@@ -42,13 +42,13 @@ exec("ls -la", (error, stdout, stderr) => {
 // cd swift-models
 // swift run
 
-const { execFile } = require("child_process");
-const child = execFile("run-s4tf-script", (error, stdout, stderr) => {
-  if (error) {
-    throw error;
-  }
-  console.log(stdout);
-});
+// const { execFile } = require("child_process");
+// const child = execFile("run-s4tf-script", (error, stdout, stderr) => {
+//   if (error) {
+//     throw error;
+//   }
+//   console.log(stdout);
+// });
 
 
 //Serve website
