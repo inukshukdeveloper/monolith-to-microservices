@@ -42,8 +42,8 @@ exec("ls -la", (error, stdout, stderr) => {
 // cd swift-models
 // swift run
 
-const { execFile } = require('child_process');
-const child = execFile('run-swift-models', (error, stdout, stderr) => {
+const { execFile } = require("child_process");
+const child = execFile("run-swift-models", (error, stdout, stderr) => {
   if (error) {
     throw error;
   }
