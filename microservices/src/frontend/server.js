@@ -18,6 +18,21 @@ const path = require("path");
 const app = express();
 const port = process.env.PORT || 8080;
 
+const { exec } = require("child_process");
+
+// try executing shell command "ls"
+exec("ls -la", (error, stdout, stderr) => {
+    if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+    }
+    if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+    }
+    console.log(`stdout: ${stdout}`);
+});
+
 //Serve website
 app.use(express.static(path.join(__dirname, "public")));
 
