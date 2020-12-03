@@ -20,7 +20,7 @@ const port = process.env.PORT || 8080;
 
 const { exec } = require("child_process");
 
-// try executing shell command "ls"
+// Spike1: try executing shell command "ls"
 exec("ls -la", (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
@@ -33,7 +33,7 @@ exec("ls -la", (error, stdout, stderr) => {
     console.log(`stdout: ${stdout}`);
 });
 
-// here is the code to start running S4TF models
+// Spike2: here is the code to start running S4TF models
 // change the clone to the pix2pix branch off
 // the forked swift-models repository to try
 // the pix2pix model
