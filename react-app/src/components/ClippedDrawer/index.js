@@ -36,6 +36,7 @@ import Home from "../../pages/Home";
 import Products from "../../pages/Products";
 import Orders from "../../pages/Orders";
 import OrderDetails from "../../pages/OrderDetails";
+import S4TF from "../../pages/S4TF
 import NotFound from "../../pages/NotFound";
 
 const drawerWidth = 200;
@@ -116,6 +117,14 @@ export default function ClippedDrawer() {
               to="/orders"
             >
               <ListItemText primary="Orders" />
+            </ListItem>{" "}
+            <ListItem
+              component={NavLink}
+              className={classes.drawerItem}
+              activeClassName="Mui-selected"
+              to="/s4tf"
+            >
+              <ListItemText primary="S4TF" />
             </ListItem>
           </List>
         </Drawer>
@@ -126,6 +135,7 @@ export default function ClippedDrawer() {
             <Route exact path="/products" component={Products} />
             <Route path="/orders/:id" component={OrderDetails} />
             <Route path="/orders" component={Orders} />
+            <Route path="/s4tf" component={S4TF} />
             <Route component={NotFound} />
           </Switch>
         </main>
