@@ -30,7 +30,7 @@ export default function Orders() {
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        <Typography variant="h6" component="h6">Page not found</Typography>
+        <Typography variant="h6" component="h6">S4TF</Typography>
       </Paper>
     </div>
   );
