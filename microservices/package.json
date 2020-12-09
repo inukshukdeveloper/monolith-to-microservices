@@ -9,6 +9,7 @@
     "frontend": "node ./src/frontend/server.js",
     "products": "node ./src/products/server.js",
     "orders": "node ./src/orders/server.js",
+    "s4tf": "node ./src/s4tf/server.js",
     "install-all": "npm-recursive-install"
   },
   "keywords": [],
