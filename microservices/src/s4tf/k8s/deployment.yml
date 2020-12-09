@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: s4tf
+  labels:
+    app: s4tf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: s4tf
+  template:
+    metadata:
+      labels:
+        app: s4tf
+    spec:
+      containers:
+      - name: s4tf
+        image: gcr.io/<PROJECT_ID>/s4tf:1.0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
