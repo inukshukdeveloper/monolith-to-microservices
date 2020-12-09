@@ -36,7 +36,7 @@ import Home from "../../pages/Home";
 import Products from "../../pages/Products";
 import Orders from "../../pages/Orders";
 import OrderDetails from "../../pages/OrderDetails";
-import S4TF from "../../pages/S4TF
+import S4TF from "../../pages/S4TF";
 import NotFound from "../../pages/NotFound";
 
 const drawerWidth = 200;
