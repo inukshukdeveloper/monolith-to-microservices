@@ -24,13 +24,13 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function S4TF() {
+export default function Satellite() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        <Typography variant="h6" component="h6">S4TF</Typography>
+        <Typography variant="h6" component="h6">Satellite</Typography>
       </Paper>
     </div>
   );
