@@ -29,6 +29,52 @@ app.use(cors());
 //  res.json(orders.find(order => order.id === req.params.id))
 //);
 
+
+// const { exec } = require("child_process");
+
+// // Spike1: try executing shell command "ls"
+// exec("ls -la", (error, stdout, stderr) => {
+//     if (error) {
+//         console.log(`error: ${error.message}`);
+//         return;
+//     }
+//     if (stderr) {
+//         console.log(`stderr: ${stderr}`);
+//         return;
+//     }
+//     console.log(`stdout: ${stdout}`);
+// });
+
+// Spike2: here is the code to start running S4TF models
+// change the clone to the pix2pix branch off
+// the forked swift-models repository to try
+// the pix2pix model
+//
+// git clone https://github.com/tensorflow/swift-models.git
+// cd swift-models
+// swift run
+
+// const { execFile } = require("child_process");
+// const child = execFile("run-s4tf-script", (error, stdout, stderr) => {
+//   if (error) {
+//     throw error;
+//   }
+//   console.log(stdout);
+// });
+
+// const { exec } = require('child_process');
+//var yourscript = exec('sh ./src/frontend/run-s4tf-script.sh',
+//         (error, stdout, stderr) => {
+//             console.log(stdout);
+//             console.log(stderr);
+//             if (error !== null) {
+//                 console.log(`exec error: ${error}`);
+//             }
+//         });
+
+
+
+
 app.listen(port, () =>
   console.log(`S4TF microservice listening on port ${port}!`)
 );
