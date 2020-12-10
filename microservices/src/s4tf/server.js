@@ -72,11 +72,14 @@ app.use(cors());
 //             }
 //         });
 
+//Load product for pseudo database
+const products = require("./data/products.json").products;
 
-//Get orders by ID
-app.get("/api/s4tf", (req, res) =>
-  console.log(`s4tf microservice get requested!`)
-);
+//Enable cors
+app.use(cors());
+
+//Get all products
+app.get("/api/s4tf", (req, res) => res.json(products));
 
 app.listen(port, () =>
   console.log(`S4TF microservice listening on port ${port}!`)
