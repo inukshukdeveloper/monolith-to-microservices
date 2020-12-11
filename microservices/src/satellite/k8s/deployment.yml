@@ -1,1 +1,22 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: satellite
+  labels:
+    app: satellite
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: satellite
+  template:
+    metadata:
+      labels:
+        app: satellite
+    spec:
+      containers:
+      - name: sattelite
+        image: gcr.io/<PROJECT_ID>/s4tf:1.0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
