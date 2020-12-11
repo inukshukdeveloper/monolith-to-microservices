@@ -135,7 +135,7 @@ export default function ClippedDrawer() {
             <Route exact path="/products" component={Products} />
             <Route path="/orders/:id" component={OrderDetails} />
             <Route path="/orders" component={Orders} />
-            <Route path="/s4tf" component={Satellite} />
+            <Route path="/satellite" component={Satellite} />
             <Route component={NotFound} />
           </Switch>
         </main>
