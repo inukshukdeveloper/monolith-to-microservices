@@ -12,49 +12,48 @@ limitations under the License.
 */
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import Card from "@material-ui/core/Card";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
   },
+  grid: {
+    width: "1000px",
+    margin: "0 auto"
+  },
   paper: {
-    maxWidth: "800px",
-    margin: "0 auto",
     padding: theme.spacing(3, 2)
   },
-  table: {
-    minWidth: 650
-  },
-  tableRow: {
-    cursor: "pointer"
+  media: {
+    height: 0,
+    paddingTop: "56.25%" // 16:9
   }
 }));
 
-export default function Satellite({ history }) {
+export default function Satellite() {
   const classes = useStyles();
 
   const [hasErrors, setErrors] = useState(false);
-  const [orders, setOrders] = useState([]);
+  const [products, setProducts] = useState([]);
 
-  async function fetchOrders() {
+  async function fetchData() {
     try {
-      const response = await fetch(`${process.env.REACT_APP_ORDERS_URL}`);
-      const orders = await response.json();
-      setOrders(orders);
+      const response = await fetch(`${process.env.REACT_APP_PRODUCTS_URL}`);
+      const products = await response.json();
+      setProducts(products);
     } catch (err) {
       setErrors(true);
     }
   }
 
   useEffect(() => {
-    fetchOrders();
+    fetchData();
   }, []);
 
   return (
@@ -67,40 +66,26 @@ export default function Satellite({ history }) {
         </Paper>
       )}
       {!hasErrors && (
-        <Paper className={classes.paper}>
-          <Typography variant="h5">Orders</Typography>
-          <Table className={classes.table}>
-            <TableHead>
-              <TableRow>
-                <TableCell>Order Id</TableCell>
-                <TableCell>Date</TableCell>
-                <TableCell>Total Items</TableCell>
-                <TableCell>Cost</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {orders.map(order => (
-                <TableRow
-                  hover
-                  className={classes.tableRow}
-                  key={order.id}
-                  onClick={() => {
-                    history.push(`/orders/${order.id}`);
-                  }}
-                >
-                  <TableCell component="th" scope="row">
-                    {order.id}
-                  </TableCell>
-                  <TableCell>{order.date}</TableCell>
-                  <TableCell>
-                    {(order.items && order.items.length) || 0}
-                  </TableCell>
-                  <TableCell>${order.cost}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </Paper>
+        <Grid className={classes.grid} container spacing={3} justify="flex-start" alignItems="stretch">
+          {products.map(product => {
+            return (
+              <Grid key={product.id} item md={4} xs={12}>
+                <Card>
+                  <CardMedia
+                    className={classes.media}
+                    image={product.picture}
+                    title={product.name}
+                  />
+                  <CardContent>
+                    <Typography variant="body1">
+                      {product.name} - ${product.cost}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            );
+          })}
+        </Grid>
       )}
     </div>
   );
