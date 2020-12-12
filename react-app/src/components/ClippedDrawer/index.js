@@ -122,7 +122,7 @@ export default function ClippedDrawer() {
               component={NavLink}
               className={classes.drawerItem}
               activeClassName="Mui-selected"
-              to="/s4tf"
+              to="/satellite"
             >
               <ListItemText primary="Satellite" />
             </ListItem>
