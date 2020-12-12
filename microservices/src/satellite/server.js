@@ -79,8 +79,8 @@ const products = require("./data/products.json").products;
 app.use(cors());
 
 //Get all products
-app.get("/api/s4tf", (req, res) => res.json(products));
+app.get("/api/satellite", (req, res) => res.json(products));
 
 app.listen(port, () =>
-  console.log(`S4TF microservice listening on port ${port}!`)
+  console.log(`Satellite microservice listening on port ${port}!`)
 );
