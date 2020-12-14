@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: sattelite
-        image: gcr.io/<PROJECT_ID>/s4tf:1.0.0
+        image: gcr.io/<PROJECT_ID>/satellite:1.0.0
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
