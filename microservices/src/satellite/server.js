@@ -79,7 +79,10 @@ const products = require("./data/products.json").products;
 app.use(cors());
 
 //Get all products
-app.get("/api/satellite", (req, res) => res.json(products));
+app.get("/api/satellite", (req, res) => 
+  console.log(`Satellite microservice looking up products`)
+  res.json(products)
+);
 
 app.listen(port, () =>
   console.log(`Satellite microservice listening on port ${port}!`)
