@@ -74,7 +74,7 @@ app.use(cors());
 
 //Load product for pseudo database
 const products = require("./data/products.json").products;
-console.log(products.name); 
+console.log(products); 
 
 //Enable cors
 app.use(cors());
