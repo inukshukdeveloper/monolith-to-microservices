@@ -15,7 +15,7 @@ spec:
         app: satellite
     spec:
       containers:
-      - name: sattelite
+      - name: satellite
         image: gcr.io/<PROJECT_ID>/satellite:1.0.0
         imagePullPolicy: Always
         ports:
