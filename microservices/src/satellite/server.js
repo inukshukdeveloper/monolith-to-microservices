@@ -80,7 +80,12 @@ console.log(products);
 app.use(cors());
 
 //Get all products
-app.get("/api/satellite", (req, res) => res.json(products));
+//app.get("/api/satellite", (req, res) => res.json(products));
+
+
+app.get('/api/satellite', (req, res) => {
+  res.send('Hello from satellite!');
+});
 
 app.listen(port, () =>
   console.log(`Satellite microservice listening on port ${port}!`)
