@@ -60,7 +60,7 @@ export default function Satellite() {
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        <Typography variant="h6" component="h6">Satellite Page</Typography>
+        <Typography variant="h6" component="h6">{response}</Typography>
       </Paper>
     </div>
   );  
