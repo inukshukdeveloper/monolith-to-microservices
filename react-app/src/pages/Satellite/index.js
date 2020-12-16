@@ -59,9 +59,18 @@ export default function Satellite() {
     
   return (
     <div className={classes.root}>
-      <Paper className={classes.paper}>
-        <Typography variant="h6" component="h6">This Is Where Satellite Data Will Go</Typography>
-      </Paper>
+      {hasErrors && (
+        <Paper className={classes.paper}>
+          <Typography component="p">
+            An error has occurred, please try reloading the page.
+          </Typography>
+        </Paper>
+      )}
+      {!hasErrors && (
+        <Paper className={classes.paper}>
+          <Typography variant="h6" component="h6">This Is Where Satellite Data Will Go</Typography>
+        </Paper>
+      )}
     </div>
   );  
     
