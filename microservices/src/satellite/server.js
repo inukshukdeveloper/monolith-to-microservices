@@ -82,6 +82,10 @@ app.use(cors());
 //Get all products
 //app.get("/api/satellite", (req, res) => res.json(products));
 
+app.all('/api/satellite', function (req, res, next) {
+  console.log('Accessing the satellite section ...')
+  next() // pass control to the next handler
+})
 
 app.get('/api/satellite', (req, res) => {
   res.send('Hello from satellite!');
