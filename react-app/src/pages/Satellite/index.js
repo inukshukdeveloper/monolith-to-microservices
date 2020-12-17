@@ -41,10 +41,14 @@ export default function Satellite() {
 
   const [hasErrors, setErrors] = useState(false);
   const [products, setProducts] = useState([]);
+  const [satdata, setSatdata] = useState([]);
+
 
   async function fetchData() {
     try {
       const response = await fetch(`${process.env.REACT_APP_SATELLITE_URL}`);
+      const satdata = await response.text();
+      setSatdata(satdata);
   //    const products = await response.json();
   //    setProducts(products);
     } catch (err) {
@@ -68,7 +72,7 @@ export default function Satellite() {
       )}
       {!hasErrors && (
         <Paper className={classes.paper}>
-          <Typography variant="h6" component="h6">response.text()</Typography>
+          <Typography variant="h6" component="h6">{satdata}</Typography>
         </Paper>
       )}
     </div>
