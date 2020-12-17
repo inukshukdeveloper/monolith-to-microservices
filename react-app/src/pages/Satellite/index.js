@@ -49,7 +49,7 @@ export default function Satellite() {
       const response = await fetch(`${process.env.REACT_APP_SATELLITE_URL}`);
       const satdata = await response.text();
       setSatdata(satdata);
-      console.log(satdata)
+      console.log(satdata);
   //    const products = await response.json();
   //    setProducts(products);
     } catch (err) {
