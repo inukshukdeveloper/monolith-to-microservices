@@ -29,6 +29,7 @@ app.get("/api/products", (req, res) => res.json(products));
 
 //Get products by ID
 app.get("/api/products/:id", (req, res) =>
+  console.log('product microservice received get');
   res.json(products.find(product => product.id === req.params.id))
 );
 
