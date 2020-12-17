@@ -68,7 +68,7 @@ export default function Satellite() {
       )}
       {!hasErrors && (
         <Paper className={classes.paper}>
-          <Typography variant="h6" component="h6">This Is Where Satellite Data Will Go</Typography>
+          <Typography variant="h6" component="h6">response.text()</Typography>
         </Paper>
       )}
     </div>
