@@ -24,6 +24,11 @@ const products = require("./data/products.json").products;
 //Enable cors
 app.use(cors());
 
+app.all('/api/products', function (req, res, next) {
+  console.log('Accessing the products section ...')
+  next() // pass control to the next handler
+})
+
 //Get all products
 app.get("/api/products", (req, res) => res.json(products));
 
