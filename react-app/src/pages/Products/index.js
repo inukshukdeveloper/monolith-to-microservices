@@ -56,6 +56,7 @@ export default function Products() {
   }
 
   useEffect(() => {
+    console.log('fetching product data');
     fetchData();
   }, []);
 
