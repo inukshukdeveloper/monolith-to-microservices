@@ -59,6 +59,7 @@ export default function Satellite() {
   }
 
   useEffect(() => {
+    console.log('fetching data');
     fetchData();
   }, []);
 
